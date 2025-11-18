@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Окко - стриминговый сервис с лучшими фильмами и сериалами. Смотрите новинки кино, популярные сериалы и эксклюзивный контент в отличном качестве.">
+    <title>Окко - Фильмы и сериалы | Подписка на кино и ТВ</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="logo">
+                    <p>OKKO</p>
+                </div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="#movies">Фильмы</a></li>
+                        <li><a href="#series">Сериалы</a></li>
+                        <li><a href="#subscription">Подписка</a></li>
+                    </ul>
+                </nav>
+                <div class="header__actions">
+                    <button class="btn btn--outline" id="openTrialModal">Попробовать бесплатно</button>
+                    <button class="btn btn--login" id="openModal">
+                        <i class="fas fa-user"></i> Войти</button>
+                    <button class="burger" id="burger" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
+    <section class="hero-slider">
+        <div class="slider" id="mainSlider">
+            <div class="slider__item active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/3.webp');">
+                <div class="slider__content">
+                    <span class="slider__badge">Новинка</span>
+                    <h1>Аватар: Путь воды</h1>
+                    <p>Джейк Салли и Нейтири защищают семью и свой народ, но новая угроза возвращает их к старым битвам</p>
+                    <div class="slider__buttons">
+                        <button class="btn btn--primary" data-trailer="avatar">
+                            <i class="fas fa-play"></i> Смотреть трейлер
+                        </button>
+                        <button class="btn btn--outline">
+                            <i class="fas fa-info-circle"></i> Подробнее
+                        </button>
+                    </div>
+                    <div class="slider__meta">
+                        <span>2022</span>
+                        <span>3ч 12м</span>
+                        <span>IMDb 7.6</span>
+                        <span>16+</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider__item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/4.webp');">
+                <div class="slider__content">
+                    <span class="slider__badge">Эксклюзив</span>
+                    <h1>Джон Уик 4</h1>
+                    <p>Джон Уик обнаруживает путь к победе над Правлением Кланов, но чтобы заработать свободу, он должен сначала победить нового врага</p>
+                    <div class="slider__buttons">
+                        <button class="btn btn--primary" data-trailer="john-wick">
+                            <i class="fas fa-play"></i> Смотреть трейлер
+                        </button>
+                        <button class="btn btn--outline">
+                            <i class="fas fa-info-circle"></i> Подробнее
+                        </button>
+                    </div>
+                    <div class="slider__meta">
+                        <span>2023</span>
+                        <span>2ч 49м</span>
+                        <span>IMDb 7.9</span>
+                        <span>18+</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider__controls">
+                <button class="slider__prev" aria-label="Предыдущий слайд"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider__next" aria-label="Следующий слайд"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slider__dots"></div>
+        </div>
+    </section>
+
+  
+    <section class="section" id="movies">
+        <div class="container">
+            <h2 class="section__title">Фильмы</h2>
+            
+            <div class="tabs" id="moviesTabs">
+                <button class="tabs__btn active" data-tab="popular">Популярные</button>
+                <button class="tabs__btn" data-tab="new">Новинки</button>
+                <button class="tabs__btn" data-tab="soon">Скоро</button>
+                <button class="tabs__btn" data-tab="collections">Подборки</button>
+            </div>
+            
+            <div class="tabs-content">
+                <div id="popular" class="tab-content active">
+                    <h2>Популярные фильмы</h2>
+                    <p>Популярные фильмы — это самые обсуждаемые и любимые картины зрителей, которые собирают большое количество просмотров и положительных отзывов. Эти фильмы часто занимают высокие позиции в кинотаблицах, и их просмотр становится обязательным для любителей кино.</p>
+                    <p>Не забывайте следить за новыми релизами и обновлениями в этом разделе, чтобы быть в курсе всех горячих новинок!</p>
+                </div>
+                <div id="new" class="tab-content">
+                    <h2>Новинки</h2>
+                    <p>Новинки — это фильмы, которые только что были выпущены в кинотеатры или на стриминговые платформы. Каждый год выпускаются тысячи новых картин, и среди них можно найти настоящие жемчужины.</p>
+                    <p>Не пропустите! Эти новинки станут настоящими хитами и займут достойное место в вашем списке любимых фильмов!</p>
+                </div>
+                <div id="soon" class="tab-content">
+                    <h2>Скоро</h2>
+                    <p>В разделе "Скоро" собраны все фильмы, которые вот-вот выйдут в кинотеатры или на платформы для стриминга. Эти фильмы обещают стать настоящими хитами, так что стоит заранее подготовиться к их просмотру!</p>
+                    <p>Не забудьте следить за этим разделом, чтобы не пропустить самый интересный контент, который выйдет совсем скоро!</p>
+                </div>
+                <div id="collections" class="tab-content">
+                    <h2>Подборки</h2>
+                    <p>Подборки — это специально отобранные фильмы на определённую тему или жанр, которые помогут вам с выбором. Мы собрали для вас различные тематические подборки, чтобы вы могли найти идеальный фильм для любого настроения.</p>
+                    <p>Выбирайте фильмы, которые подойдут именно вам, и наслаждайтесь просмотром!</p>
+                </div>
+            </div>
+            <br>
+            
+            <div class="filter" id="moviesFilter">
+                <button class="filter__btn active" data-filter="all">Все</button>
+                <button class="filter__btn" data-filter="action">Боевики</button>
+                <button class="filter__btn" data-filter="comedy">Комедии</button>
+                <button class="filter__btn" data-filter="drama">Драмы</button>
+                <button class="filter__btn" data-filter="fantasy">Фантастика</button>
+                <button class="filter__btn" data-filter="horror">Ужасы</button>
+                <button class="filter__btn" data-filter="thriller">Триллеры</button>
+            </div>
+            <div class="movies-container">
+            <div class="movies-grid">
+                <div class="movie-card" data-category="action" data-id="john-wick">
+                    <div class="movie-card__poster">
+                        <img src="img/4.webp" alt="Джон Уик 4" loading="lazy">
+                        <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                        <span class="movie-card__quality">4K</span>
+                    </div>
+                    <div class="movie-card__info">
+                        <h3>Джон Уик 4</h3>
+                        <div class="movie-card__meta">
+                            <span class="rating"><i class="fas fa-star"></i> 7.9</span>
+                            <span class="year">2023</span>
+                            <span class="age">18+</span>
+                        </div>
+                        <p class="movie-card__genre">Боевик, Триллер</p>
+                    </div>
+                </div>
+                
+                <div class="movie-card" data-category="fantasy" data-id="avatar">
+                    <div class="movie-card__poster">
+                        <img src="img/3.webp" alt="Аватар: Путь воды" loading="lazy">
+                        <button class="movie-card__trailer" data-trailer="avatar" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                        <span class="movie-card__quality">4K HDR</span>
+                    </div>
+                    <div class="movie-card__info">
+                        <h3>Аватар: Путь воды</h3>
+                        <div class="movie-card__meta">
+                            <span class="rating"><i class="fas fa-star"></i> 7.6</span>
+                            <span class="year">2022</span>
+                            <span class="age">16+</span>
+                        </div>
+                        <p class="movie-card__genre">Фантастика, Приключения</p>
+                    </div>
+                </div>
+                <div class="movies-grid">
+                    <div class="movie-card" data-category="action" data-id="john-wick">
+                        <div class="movie-card__poster">
+                            <img src="img/6.webp" alt="Мастер" loading="lazy">
+                            <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                            <span class="movie-card__quality">4K</span>
+                        </div>
+                        <div class="movie-card__info">
+                            <h3>Мастер</h3>
+                            <div class="movie-card__meta">
+                                <span class="rating"><i class="fas fa-star"></i> 6.1</span>
+                                <span class="year">2025</span>
+                                <span class="age">18+</span>
+                            </div>
+                            <p class="movie-card__genre">Боевик, Триллер</p>
+                        </div>
+                    </div>
+
+                    <div class="movies-grid">
+                        <div class="movie-card" data-category="action" data-id="john-wick">
+                            <div class="movie-card__poster">
+                                <img src="img/7.webp" alt="Живая сталь" loading="lazy">
+                                <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                <span class="movie-card__quality">4K</span>
+                            </div>
+                            <div class="movie-card__info">
+                                <h3>Живая сталь</h3>
+                                <div class="movie-card__meta">
+                                    <span class="rating"><i class="fas fa-star"></i> 7.7</span>
+                                    <span class="year">2011</span>
+                                    <span class="age">18+</span>
+                                </div>
+                                <p class="movie-card__genre">Боевик, Триллер</p>
+                            </div>
+                        </div>
+                        <div class="movies-grid">
+                            <div class="movie-card" data-category="comedy" data-id="john-wick">
+                                <div class="movie-card__poster">
+                                    <img src="img/8.webp" alt="Василий" loading="lazy">
+                                    <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                    <span class="movie-card__quality">4K</span>
+                                </div>
+                                <div class="movie-card__info">
+                                    <h3>Василий</h3>
+                                    <div class="movie-card__meta">
+                                        <span class="rating"><i class="fas fa-star"></i> 7.0</span>
+                                        <span class="year">2024</span>
+                                        <span class="age">18+</span>
+                                    </div>
+                                    <p class="movie-card__genre">Комедии</p>
+                                </div>
+                            </div>
+                            <div class="movies-grid">
+                                <div class="movie-card" data-category="comedy" data-id="john-wick">
+                                    <div class="movie-card__poster">
+                                        <img src="img/9.webp" alt="Мы миллеры" loading="lazy">
+                                        <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                        <span class="movie-card__quality">4K</span>
+                                    </div>
+                                    <div class="movie-card__info">
+                                        <h3>Мы миллеры</h3>
+                                        <div class="movie-card__meta">
+                                            <span class="rating"><i class="fas fa-star"></i> 7.3</span>
+                                            <span class="year">2013</span>
+                                            <span class="age">18+</span>
+                                        </div>
+                                        <p class="movie-card__genre">Комедии</p>
+                                    </div>
+                                </div>
+                                <div class="movies-grid">
+                                    <div class="movie-card" data-category="comedy" data-id="john-wick">
+                                        <div class="movie-card__poster">
+                                            <img src="img/10.webp" alt="Каникулы" loading="lazy">
+                                            <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                            <span class="movie-card__quality">4K</span>
+                                        </div>
+                                        <div class="movie-card__info">
+                                            <h3>Каникулы</h3>
+                                            <div class="movie-card__meta">
+                                                <span class="rating"><i class="fas fa-star"></i> 6.5</span>
+                                                <span class="year">2015</span>
+                                                <span class="age">18+</span>
+                                            </div>
+                                            <p class="movie-card__genre">Комедии</p>
+                                        </div>
+                                    </div>
+                                    <div class="movies-grid">
+                                        <div class="movie-card" data-category="drama" data-id="john-wick">
+                                            <div class="movie-card__poster">
+                                                <img src="img/11.webp" alt="Однажды в Голливиде" loading="lazy">
+                                                <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                <span class="movie-card__quality">4K</span>
+                                            </div>
+                                            <div class="movie-card__info">
+                                                <h3>Однажды в Голливиде</h3>
+                                                <div class="movie-card__meta">
+                                                    <span class="rating"><i class="fas fa-star"></i> 7.7</span>
+                                                    <span class="year">2019</span>
+                                                    <span class="age">18+</span>
+                                                </div>
+                                                <p class="movie-card__genre">Драма</p>
+                                            </div>
+                                        </div>
+                                        <div class="movies-grid">
+                                            <div class="movie-card" data-category="drama" data-id="john-wick">
+                                                <div class="movie-card__poster">
+                                                    <img src="img/12.webp" alt="Капитан Крюк" loading="lazy">
+                                                    <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                    <span class="movie-card__quality">4K</span>
+                                                </div>
+                                                <div class="movie-card__info">
+                                                    <h3>Капитан Крюк</h3>
+                                                    <div class="movie-card__meta">
+                                                        <span class="rating"><i class="fas fa-star"></i> 7.0</span>
+                                                        <span class="year">2024</span>
+                                                        <span class="age">18+</span>
+                                                    </div>
+                                                    <p class="movie-card__genre">Драма</p>
+                                                </div>
+                                            </div>
+                                            <div class="movies-grid">
+                                                <div class="movie-card" data-category="drama" data-id="john-wick">
+                                                    <div class="movie-card__poster">
+                                                        <img src="img/13.webp" alt="Зов предков" loading="lazy">
+                                                        <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                        <span class="movie-card__quality">4K</span>
+                                                    </div>
+                                                    <div class="movie-card__info">
+                                                        <h3>Зов предков</h3>
+                                                        <div class="movie-card__meta">
+                                                            <span class="rating"><i class="fas fa-star"></i> 7.7</span>
+                                                            <span class="year">2020</span>
+                                                            <span class="age">18+</span>
+                                                        </div>
+                                                        <p class="movie-card__genre">Драма</p>
+                                                    </div>
+                                                </div>
+                                                <div class="movies-grid">
+                                                    <div class="movie-card" data-category="fantasy" data-id="john-wick">
+                                                        <div class="movie-card__poster">
+                                                            <img src="img/14.webp" alt="Послезавтра" loading="lazy">
+                                                            <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                            <span class="movie-card__quality">4K</span>
+                                                        </div>
+                                                        <div class="movie-card__info">
+                                                            <h3>Послезавтра</h3>
+                                                            <div class="movie-card__meta">
+                                                                <span class="rating"><i class="fas fa-star"></i> 7.7</span>
+                                                                <span class="year">2004</span>
+                                                                <span class="age">12+</span>
+                                                            </div>
+                                                            <p class="movie-card__genre">Фантастика</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="movies-grid">
+                                                        <div class="movie-card" data-category="fantasy" data-id="john-wick">
+                                                            <div class="movie-card__poster">
+                                                                <img src="img/15.webp" alt="Мег: Монстр глубины" loading="lazy">
+                                                                <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                                <span class="movie-card__quality">4K</span>
+                                                            </div>
+                                                            <div class="movie-card__info">
+                                                                <h3>Мег: Монстр глубины</h3>
+                                                                <div class="movie-card__meta">
+                                                                    <span class="rating"><i class="fas fa-star"></i> 5.9</span>
+                                                                    <span class="year">2018</span>
+                                                                    <span class="age">18+</span>
+                                                                </div>
+                                                                <p class="movie-card__genre">Фантастика</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="movies-grid">
+                                                            <div class="movie-card" data-category="horror" data-id="john-wick">
+                                                                <div class="movie-card__poster">
+                                                                    <img src="img/16.webp" alt="Заклятие" loading="lazy">
+                                                                    <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                                    <span class="movie-card__quality">4K</span>
+                                                                </div>
+                                                                <div class="movie-card__info">
+                                                                    <h3>Заклятие</h3>
+                                                                    <div class="movie-card__meta">
+                                                                        <span class="rating"><i class="fas fa-star"></i> 7.3</span>
+                                                                        <span class="year">2013</span>
+                                                                        <span class="age">18+</span>
+                                                                    </div>
+                                                                    <p class="movie-card__genre">Ужасы</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="movies-grid">
+                                                                <div class="movie-card" data-category="horror" data-id="john-wick">
+                                                                    <div class="movie-card__poster">
+                                                                        <img src="img/17.webp" alt="Челюсти" loading="lazy">
+                                                                        <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                                        <span class="movie-card__quality">4K</span>
+                                                                    </div>
+                                                                    <div class="movie-card__info">
+                                                                        <h3>Челюсти</h3>
+                                                                        <div class="movie-card__meta">
+                                                                            <span class="rating"><i class="fas fa-star"></i> 7.3</span>
+                                                                            <span class="year">1975</span>
+                                                                            <span class="age">18+</span>
+                                                                        </div>
+                                                                        <p class="movie-card__genre">Ужасы</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="movies-grid">
+                                                                    <div class="movie-card" data-category="horror" data-id="john-wick">
+                                                                        <div class="movie-card__poster">
+                                                                            <img src="img/18.webp" alt="Черная дыра" loading="lazy">
+                                                                            <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                                            <span class="movie-card__quality">4K</span>
+                                                                        </div>
+                                                                        <div class="movie-card__info">
+                                                                            <h3>Черная дыра</h3>
+                                                                            <div class="movie-card__meta">
+                                                                                <span class="rating"><i class="fas fa-star"></i> 7.6</span>
+                                                                                <span class="year">2000</span>
+                                                                                <span class="age">18+</span>
+                                                                            </div>
+                                                                            <p class="movie-card__genre">Ужасы</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="movies-grid">
+                                                                        <div class="movie-card" data-category="thriller" data-id="john-wick">
+                                                                            <div class="movie-card__poster">
+                                                                                <img src="img/19.webp" alt="Форсаж" loading="lazy">
+                                                                                <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                                                <span class="movie-card__quality">4K</span>
+                                                                            </div>
+                                                                            <div class="movie-card__info">
+                                                                                <h3>Форсаж</h3>
+                                                                                <div class="movie-card__meta">
+                                                                                    <span class="rating"><i class="fas fa-star"></i> 7.8</span>
+                                                                                    <span class="year">2001</span>
+                                                                                    <span class="age">18+</span>
+                                                                                </div>
+                                                                                <p class="movie-card__genre">Триллеры</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="movies-grid">
+                                                                            <div class="movie-card" data-category="thriller" data-id="john-wick">
+                                                                                <div class="movie-card__poster">
+                                                                                    <img src="img/20.webp" alt="Перевозчик" loading="lazy">
+                                                                                    <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                                                    <span class="movie-card__quality">4K</span>
+                                                                                </div>
+                                                                                <div class="movie-card__info">
+                                                                                    <h3>Перевозчик</h3>
+                                                                                    <div class="movie-card__meta">
+                                                                                        <span class="rating"><i class="fas fa-star"></i> 7.5</span>
+                                                                                        <span class="year">2002</span>
+                                                                                        <span class="age">18+</span>
+                                                                                    </div>
+                                                                                    <p class="movie-card__genre">Триллеры</p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="movies-grid">
+                                                                                <div class="movie-card" data-category="thriller" data-id="john-wick">
+                                                                                    <div class="movie-card__poster">
+                                                                                        <img src="img/21.webp" alt="Ночной рейс" loading="lazy">
+                                                                                        <button class="movie-card__trailer" data-trailer="john-wick" aria-label="Смотреть трейлер"><i class="fas fa-play"></i></button>
+                                                                                        <span class="movie-card__quality">4K</span>
+                                                                                    </div>
+                                                                                    <div class="movie-card__info">
+                                                                                        <h3>Ночной рейс</h3>
+                                                                                        <div class="movie-card__meta">
+                                                                                            <span class="rating"><i class="fas fa-star"></i> 7.0</span>
+                                                                                            <span class="year">2005</span>
+                                                                                            <span class="age">18+</span>
+                                                                                        </div>
+                                                                                        <p class="movie-card__genre">Триллеры</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>           
+        </div>
+    </section>
+
+    <section class="section" id="series">
+        <div class="container">
+          <h2 class="section__title">Сериалы</h2>
+          
+          <div class="series-grid-container">
+            <div class="scroll-nav">
+              <button class="scroll-left" aria-label="Прокрутить влево"><i class="fas fa-chevron-left"></i></button>
+              <button class="scroll-right" aria-label="Прокрутить вправо"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="series-grid">
+               
+                <div class="series-card">
+                  <div class="series-card__poster">
+                    <img src="img/22.webp" alt="Во все тяжкие" loading="lazy">
+                    <span class="series-card__seasons">5 сезонов</span>
+                    <div class="series-card__badge">Топ</div>
+                  </div>
+                  <div class="series-card__info">
+                    <h3>Во все тяжкие</h3>
+                    <div class="series-card__meta">
+                      <span class="rating"><i class="fas fa-star"></i> 9.5</span>
+                      <span class="year">2008-2013</span>
+                      <span class="age">18+</span>
+                    </div>
+                    <p class="series-card__genre">Криминал, Драма</p>
+                    <button class="btn btn--primary">Смотреть</button>
+                  </div>
+                </div>
+              
+             
+                <div class="series-card series-card--new">
+                  <div class="series-card__poster">
+                    <img src="img/23.webp" alt="Очень странные дела" loading="lazy">
+                    <span class="series-card__seasons">4 сезона</span>
+                  </div>
+                  <div class="series-card__info">
+                    <h3>Очень странные дела</h3>
+                    <div class="series-card__meta">
+                      <span class="rating"><i class="fas fa-star"></i> 8.7</span>
+                      <span class="year">2016-2023</span>
+                      <span class="age">16+</span>
+                    </div>
+                    <p class="series-card__genre">Фантастика, Ужасы</p>
+                    <button class="btn btn--primary">Смотреть</button>
+                  </div>
+                </div>
+              
+               
+                <div class="series-card series-card--popular">
+                  <div class="series-card__poster">
+                    <img src="img/24.webp" alt="Ведьмак" loading="lazy">
+                    <span class="series-card__seasons">3 сезона</span>
+                  </div>
+                  <div class="series-card__info">
+                    <h3>Ведьмак</h3>
+                    <div class="series-card__meta">
+                      <span class="rating"><i class="fas fa-star"></i> 8.2</span>
+                      <span class="year">2019-н.в.</span>
+                      <span class="age">18+</span>
+                    </div>
+                    <p class="series-card__genre">Фэнтези, Приключения</p>
+                    <button class="btn btn--primary">Смотреть</button>
+                  </div>
+                </div>
+              
+             
+                <div class="series-card">
+                  <div class="series-card__poster">
+                    <img src="img/25.webp" alt="Офис" loading="lazy">
+                    <span class="series-card__seasons">9 сезонов</span>
+                  </div>
+                  <div class="series-card__info">
+                    <h3>Офис</h3>
+                    <div class="series-card__meta">
+                      <span class="rating"><i class="fas fa-star"></i> 8.9</span>
+                      <span class="year">2005-2013</span>
+                      <span class="age">16+</span>
+                    </div>
+                    <p class="series-card__genre">Комедия</p>
+                    <button class="btn btn--primary">Смотреть</button>
+                  </div>
+                </div>
+              
+               
+                <div class="series-card series-card--featured">
+                  <div class="series-card__poster">
+                    <img src="img/26.webp" alt="Острые козырьки" loading="lazy">
+                    <span class="series-card__seasons">6 сезонов</span>
+                  </div>
+                  <div class="series-card__info">
+                    <h3>Острые козырьки</h3>
+                    <div class="series-card__meta">
+                      <span class="rating"><i class="fas fa-star"></i> 8.8</span>
+                      <span class="year">2013-2022</span>
+                      <span class="age">18+</span>
+                    </div>
+                    <p class="series-card__genre">Криминал, Драма</p>
+                    <button class="btn btn--primary">Смотреть</button>
+                  </div>
+                </div>
+              
+              
+                <div class="series-card">
+                  <div class="series-card__poster">
+                    <img src="img/27.webp" alt="Мандалорец" loading="lazy">
+                    <span class="series-card__seasons">3 сезона</span>
+                  </div>
+                  <div class="series-card__info">
+                    <h3>Мандалорец</h3>
+                    <div class="series-card__meta">
+                      <span class="rating"><i class="fas fa-star"></i> 8.7</span>
+                      <span class="year">2019-н.в.</span>
+                      <span class="age">12+</span>
+                    </div>
+                    <p class="series-card__genre">Фантастика, Боевик</p>
+                    <button class="btn btn--primary">Смотреть</button>
+                  </div>
+                </div>
+              </div>
+      </section>
+
+
+   
+    <section class="section section--accent" id="subscription">
+        <div class="container">
+            <div class="subscription-plans">
+                <div class="subscription-info">
+                    <h2 class="section__title">Выберите подписку</h2>
+                    <p class="section__subtitle">Доступ к тысячам фильмов, сериалов и ТВ-каналов</p>
+                    
+                    <ul class="subscription-features">
+                        <li><i class="fas fa-check"></i> Без рекламы</li>
+                        <li><i class="fas fa-check"></i> Просмотр в 4K</li>
+                        <li><i class="fas fa-check"></i> До 5 устройств</li>
+                        <li><i class="fas fa-check"></i> Оффлайн-просмотр</li>
+                    </ul>
+                </div>
+                
+                <div class="plans">
+                    <div class="plan-card">
+                        <h3>Месячная</h3>
+                        <div class="plan-price">
+                            <span class="price">299 ₽</span>
+                            <span class="period">в месяц</span>
+                        </div>
+                        <button class="btn btn--primary">Выбрать</button>
+                        <p class="plan-save">Экономия 0%</p>
+                    </div>
+                    
+                    <div class="plan-card plan-card--popular">
+                        <div class="popular-badge">Выгодно</div>
+                        <h3>Годовая</h3>
+                        <div class="plan-price">
+                            <span class="price">2 390 ₽</span>
+                            <span class="period">199 ₽ в месяц</span>
+                        </div>
+                        <button class="btn btn--primary">Выбрать</button>
+                        <p class="plan-save">Экономия 33%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section" id="devices">
+        <div class="container">
+          <h2 class="section__title">Смотрите на любых устройствах</h2>
+          
+          <div class="devices-grid">
+         
+            <div class="device-card">
+              <div class="device-icon">
+                <i class="fas fa-tv"></i>
+              </div>
+              <h3>Телевизор</h3>
+              <p>Smart TV, Android TV, Apple TV и другие</p>
+            </div>
+            
+          
+            <div class="device-card">
+              <div class="device-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Смартфон</h3>
+              <p>iPhone, Android-телефоны и другие мобильные устройства</p>
+            </div>
+            
+            
+            <div class="device-card">
+              <div class="device-icon">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <h3>Компьютер</h3>
+              <p>Windows, macOS и Linux системы</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  
+    <section class="section faq" id="faq">
+        <div class="container">
+            <h2 class="section__title">Частые вопросы</h2>
+            
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3>Как оформить подписку?</h3>
+                        <span class="accordion__icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <p>Для оформления подписки перейдите в раздел "Подписка", выберите подходящий тарифный план и нажмите "Оформить подписку". Доступны различные способы оплаты: банковская карта, PayPal, мобильный платеж и другие.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3>Можно ли смотреть без интернета?</h3>
+                        <span class="accordion__icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <p>Да, вы можете загружать фильмы и сериалы на свое устройство для просмотра без подключения к интернету. Для этого нажмите на кнопку "Скачать" рядом с выбранным контентом. Доступно в мобильных приложениях Окко.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3>Как отменить подписку?</h3>
+                        <span class="accordion__icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <p>Вы можете отменить подписку в любое время в разделе "Моя подписка" в вашем профиле. Подписка останется активной до конца оплаченного периода, после чего доступ к контенту прекратится.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3>На скольких устройствах можно смотреть?</h3>
+                        <span class="accordion__icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion__content">
+                        <p>Одновременный просмотр возможен на 5 устройствах. Вы можете активировать до 10 устройств в своем аккаунте, но одновременно смотреть контент можно не более чем на 5 из них.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__logo">
+                    <p>OKKO</p>
+                </div>
+                
+                <div class="footer__nav">
+                    <div class="footer__column">
+                        <h4>О сервисе</h4>
+                        <ul>
+                            <li><a href="#">О компании</a></li>
+                            <li><a href="#">Вакансии</a></li>
+                            <li><a href="#">Партнерам</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h4>Разделы</h4>
+                        <ul>
+                            <li><a href="#movies">Фильмы</a></li>
+                            <li><a href="#series">Сериалы</a></li>
+                            <li><a href="#channels">ТВ-каналы</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h4>Поддержка</h4>
+                        <ul>
+                            <li><a href="#">Помощь</a></li>
+                            <li><a href="#">Обратная связь</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h4>Контакты</h4>
+                        <ul>
+                            <li><a href="mailto:support@okko.tv">support@okko.tv</a></li>
+                            <li><a href="tel:+78003333600">8 800 333-36-00</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer__social">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="copyright">
+                    <p>© 2023 ООО "Окко". Все права защищены.</p>
+                </div>
+                
+                <div class="footer__links">
+                    <a href="#">Пользовательское соглашение</a>
+                    <a href="#">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   
+    <div class="modal" id="trailerModal">
+        <div class="modal__content">
+            <span class="modal__close" aria-label="Закрыть">&times;</span>
+            <div class="modal__video">
+                <iframe id="trailerFrame" width="100%" height="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="modals" id="loginModal"> 
+        <div class="modals__content"> 
+          <span class="modals__close" id="closeModal">&times;</span> 
+          <h2>Вход в аккаунт</h2>
+          <form class="modals__form"> 
+            <input type="text" placeholder="Email или телефон" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit" class="btn btn--submit">Войти</button>
+          </form>
+        </div>
+      </div>
+      <div class="modales" id="trialModal">
+        <div class="modales__content">
+          <span class="modales__close" id="closeTrialModal">&times;</span>
+          <h2>Начните бесплатно</h2>
+          <form class="modales__form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit" class="btn btn--submit">Начать</button>
+          </form>
+        </div>
+      </div>
+      
+      
+    <script src="js/main.js"></script>
+    <script src="js/burger.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/modal.js"></script>
+    <script src=" js/series.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/modales.js"></script>
+</body>
+</html>
